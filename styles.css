@@ -56,3 +56,8 @@ button {
 .equals {
     background-color: rgb(133, 164, 20);
 }
+
+.back , .dot{
+    flex : 1;
+    font-weight: bold;
+}

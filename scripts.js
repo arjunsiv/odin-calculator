@@ -48,7 +48,6 @@ let displayValue = "";
 
 
 const numbers = [...document.querySelectorAll(".number")];
-console.log(numbers);
 for(let number of numbers){
     number.addEventListener("click", (e)=>{
         displayValue +=e.target.innerText
@@ -76,10 +75,14 @@ for(let operatorButton of operators){
 
 const equal = document.querySelector(".equals");
 equal.addEventListener("click",(e)=>{
-    dot.disabled = false;
     num2 = displayValue;
-    displayValue = operate(num1,num2,operator);;
+    displayValue = String(operate(num1,num2,operator));
+    if(displayValue.includes(".")){
+        dot.disabled = true;
+    }
     populateDisplay(displayValue);
+    num1 ="";
+
 })
 
 const clear = document.querySelector(".clear");
@@ -93,6 +96,13 @@ clear.addEventListener("click",(e)=>{
 })
 
 const textBox = document.querySelector(".textbox");
+
+const back = document.querySelector(".back");
+
+back.addEventListener("click", (e)=>{
+    displayValue = displayValue.slice(0,-1);
+    populateDisplay(displayValue);
+});
 
 const populateDisplay = (value) =>{
     textBox.innerHTML = value;
