@@ -10,6 +10,12 @@ html {
     align-items: center;
     
 } */
+
+body{
+    border: 10px solid;
+    border-radius: 5px;
+    border-color: rgb(4, 97, 11);
+}
 .calculator{
     display: flex;
     flex-direction: column;
@@ -23,18 +29,30 @@ html {
     background-color: rgb(147, 225, 180);
     height: 50px;
     color: darkgreen;
-    text-align: right;
     padding: 10px;
     font-weight: bold;
+    word-wrap: break-word; /* Enable word wrapping */
+    text-align: end; 
 }
 .row {
     display: flex;
     gap: 5px;
-
 }
 button {
     height: 50px;
     width: 50px;
     background-color: rgb(40, 72, 51);
     color: white;
+}
+
+.operator {
+    background-color: rgb(40, 104, 14);
+}
+
+.clear {
+    background-color: rgb(118, 7, 7);
+}
+
+.equals {
+    background-color: rgb(133, 164, 20);
 }
